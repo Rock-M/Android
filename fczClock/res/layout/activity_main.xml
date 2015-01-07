@@ -1,0 +1,78 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <com.mb.fczclock.TimeView
+                    android:id="@+id/tabTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tvTime"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                </com.mb.fczclock.TimeView>
+
+                <com.mb.fczclock.AlarmView
+                    android:id="@+id/tabAlarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <ListView
+                        android:id="@+id/lvAlarmList"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" >
+                    </ListView>
+
+                    <Button
+                        android:id="@+id/btnAddAlarm"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_alarm" />
+                </com.mb.fczclock.AlarmView>
+
+                <LinearLayout
+                    android:id="@+id/tabTimer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabStopWatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</FrameLayout>
